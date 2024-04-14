@@ -1,26 +1,33 @@
-const express = require('express')
-const http = require('http')
-const app = express()
+//! creating Express Serever
+
+const { log } = require("console");
+const express = require("express");
+
+const app = express();
+
+const PORT = 3000;
 
 
 
-app.get('/', (req, res) => {
+// app.get('/' ,(req,res)=>{
+//     res.send('HEllo john')
+// })
 
-    res.send("Express serever is working fine")
-
-}).listen(5000, () => {
-    console.log("Server is Connected ready to go")
-})
-
-
+// app.listen(PORT, (error) => {
+//   console.log(`serever is working on ${PORT}`);
+// });
 
 
+//! create http serever 
 
+const  http = require('http')
 
-http.createServer((req, res) => {
-
-    res.write("Serever is working fine ")
+http.createServer((req,res)=>{
+    res.write("this is http serever ")
     res.end()
 
+}).listen(PORT,()=>{
+    console.log('Http serever is working good');
+})
 
-}).listen(3000)
+// Read And Write the fs 
